@@ -1,0 +1,19 @@
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-color: #222;
+$font-size: 1rem;
+$line-height: 1.5;
+$font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+// Define typography
+html {
+  font: $font-style, $font-variant, $font-weight, #{$font-size}/#{$line-height}, $font-family;
+}
+
+// Vertically center anything
+.vertical-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
