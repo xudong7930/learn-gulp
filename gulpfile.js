@@ -17,6 +17,8 @@ var browserSync = require('browser-sync');
 // var babel = require("gulp-babel");
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var notify = require('gulp-notify');
+
 
 var path = require('path');
 var del = require('del');
@@ -52,6 +54,15 @@ gulp.task('clean', function (cb) {
 })
 
 // styles
+gulp.taks('css', function () {
+    return gulp.src('src/css/**/*.css')
+        .pipe(autoprefixer())
+        .pipe(minifycss())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({message: 'all done, master'}));
+});
+
+
 gulp.task('styles', function() {
     return gulp.src(paths.styles.src)
         .pipe(sourcemaps.init())
